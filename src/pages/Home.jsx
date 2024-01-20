@@ -25,7 +25,7 @@ export function Home() {
 
           <div className="flex flex-row items-center gap-12 my-28">
 
-            <div className="flex justify-center flex-1">
+            <div className="flex justify-center flex-1 ">
               <img src="https://cdn.pixabay.com/photo/2015/06/22/23/20/cocktail-818197_1280.jpg"
                   className="object-contain"
               />
