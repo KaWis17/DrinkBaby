@@ -1,7 +1,12 @@
 import { DrinkCard } from "../components/DrinkCard"
 import { useState, useEffect } from "react"
 import axios from "axios";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { DrinkModal } from "../components/DrinkModal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+
 
 
 export function Search() {
@@ -32,21 +37,22 @@ export function Search() {
       <div className="bg-background-color">
         <div className="container mx-auto flex flex-col">
 
-          <div className="my-10 w-5/12 mx-auto">
+          <div className="flex flex-row items-center my-10 w-5/12 mx-auto bg-secondary-color text-white text-lg rounded-xl border-2">
+            <FontAwesomeIcon icon={faMagnifyingGlass} fontSize="20" className='pl-5'/>  
             <input
               type="text" 
               placeholder="Search for a drink..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="py-2 px-1 w-full bg-secondary-color rounded-lg border-2 placeholder-gray-300 text-white"
+              className="p-5 bg-secondary-color placeholder-gray-300 grow outline-none rounded-xl"
             />
           </div>
 
-          <div className="flex flex-row flex-wrap justify-around gap-3 p-10">
+          <div className="flex flex-row flex-wrap justify-around gap-5 p-10">
             {items.map(item => (
               <motion.div
                 layoutId={item.idDrink}
-                onClick={() => setSelectedDrink(item)}
+                onClick={() => {if(!selectedDrink){setSelectedDrink(item)}}}
                 key={item.idDrink}
               >
                 <DrinkCard name={item.strDrink} image={item.strDrinkThumb} glass={item.strGlass} category={item.strCategory}/>
@@ -54,24 +60,12 @@ export function Search() {
             ))}
           </div>
 
-          <AnimatePresence>
-            {
-              selectedDrink && (
-                <motion.div 
-                  layoutId={selectedDrink.idDrink}
-                  className="h-1/2 w-1/2 z-50 fixed bg-red-500 inset-x-0 inset-y-0 m-auto"
-                  
-                >
-                  <motion.h5>{selectedDrink.strDrink}</motion.h5>
-                  <motion.h2>Test</motion.h2>
-                  <motion.button 
-                    onClick={() => setSelectedDrink(null)} 
-                    className="bg-blue-500 h-16 w-16"
-                  />
-                </motion.div>
-              )
-            }
-          </AnimatePresence>
+
+          {
+            selectedDrink && (  
+              <DrinkModal drink={selectedDrink} setDrink={setSelectedDrink}/>
+            )
+          } 
 
         </div>
       </div>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function DrinkCard(props) {
     return (
-        <motion.div className={`shadow-lg max-w-sm min-w-sm h-96 w-96 rounded-lg border-transparent border-8`}>
+        <motion.div className={`shadow-lg max-w-sm min-w-sm h-96 w-96 rounded-lg border-transparent border-8 cursor-pointer`}>
             <motion.div className='flex flex-col content-end h-full bg-cover bg-[image:var(--image-url)]'
                  style={{'--image-url': `url(${props.image})`}} >
 
