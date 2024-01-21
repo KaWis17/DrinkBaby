@@ -34,12 +34,12 @@ export function DrinkModal(props) {
             <AnimatePresence>        
                 <motion.div 
                 layoutId={props.drink.idDrink} 
-                className="h-2/3 w-2/3 fixed inset-0 top-0 m-auto"
+                className="h-full w-full md:h-2/3 md:w-2/3 fixed inset-0 top-0 m-auto"
                 >
                     <div className="w-full h-full flex flex-col bg-white rounded-xl">
                 
-                        <div className='px-5 py-3 flex flex-row justify-between border-b-4'>
-                            <div className='flex flex-row items-center'>
+                        <div className='px-5 pt-6 md:pt-3 pb-3 flex flex-row justify-end md:justify-between border-b-4'>
+                            <div className='hidden md:flex flex-row items-center'>
                                 <p>
                                     <FontAwesomeIcon icon={faHouse} className='pr-2'/>  
                                     DrinkBaby
@@ -62,15 +62,21 @@ export function DrinkModal(props) {
                             </button>
                         </div>
 
-                        <div className='flex flex-row h-full w-full'>
+                        <div className='flex flex-col-reverse xl:flex-row h-full w-full'>
 
                             <div className='flex-1 bg-white overflow-y-scroll p-5'>
+
+                                <div 
+                                    className='xl:hidden aspect-square mb-10 bg-[image:var(--image-url)] bg-cover'
+                                    style={{'--image-url': `url(${props.drink.strDrinkThumb})`}}>
+                                </div>
+
                                 <h1 className='text-5xl pb-1'>{props.drink.strDrink}</h1>
 
                                 <h2 className='text-xl pb-2'>{props.drink.strCategory}</h2>
                             
 
-                                <div className='flex flex-row pb-5'>
+                                <div className='flex flex-row pb-5 overflow-x-scroll'>
                                     <div className='mr-5 px-3 py-1 rounded-full bg-accent-color text-white'>
                                         <p className='text-justify text-lg'>{props.drink.strAlcoholic}</p>
                                     </div>
@@ -103,7 +109,7 @@ export function DrinkModal(props) {
                             </div>
 
                             <div 
-                                className='flex-1  bg-[image:var(--image-url)] bg-cover'
+                                className='hidden xl:block flex-1  bg-[image:var(--image-url)] bg-cover'
                                 style={{'--image-url': `url(${props.drink.strDrinkThumb})`}}>
                             </div>
 

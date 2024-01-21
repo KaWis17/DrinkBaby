@@ -6,11 +6,11 @@ export function Home() {
         <section className="container mx-auto relative">
 
           <div className="flex flex-row items-center gap-12 my-28">
-            <div className="flex flex-1 flex-col items-start">
+            <div className="flex flex-1 flex-col items-start px-3 md:px-0 ">
               <h1 className="text-5xl text-left pb-5">Drink baby!</h1>
-              <p className="text-xl text-left">Welcome to DrinkBaby, your go-to online destination for a world of delightful and creative alcoholic cocktails! Dive into a realm of flavor exploration and cocktail craftsmanship as we present an enticing array of expertly curated libations to elevate your drinking experience.</p>
+              <p className="text-justify text-xl md:text-left">Welcome to DrinkBaby, your go-to online destination for a world of delightful and creative alcoholic cocktails! Dive into a realm of flavor exploration and cocktail craftsmanship as we present an enticing array of expertly curated libations to elevate your drinking experience.</p>
             </div>
-            <div className="flex justify-center flex-1">
+            <div className="hidden md:flex justify-center flex-1">
               <img src="https://cdn.pixabay.com/photo/2014/06/26/16/33/cocktail-377960_1280.png"
                   className="animate-pulse object-contain h-96"
               />
@@ -20,10 +20,9 @@ export function Home() {
         </section>
 
 
-
         <section className="container mx-auto relative">
 
-          <div className="flex flex-row items-center gap-12 my-28">
+          <div className="flex flex-col md:flex-row items-center gap-12 my-28 px-3 md:px-0 ">
 
             <div className="flex justify-center flex-1 ">
               <img src="https://cdn.pixabay.com/photo/2015/06/22/23/20/cocktail-818197_1280.jpg"

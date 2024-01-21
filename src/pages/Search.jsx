@@ -37,7 +37,7 @@ export function Search() {
       <div className="bg-background-color">
         <div className="container mx-auto flex flex-col">
 
-          <div className="flex flex-row items-center my-10 w-5/12 mx-auto bg-secondary-color text-white text-lg rounded-xl border-2">
+          <div className="flex flex-row items-center my-10 md:w-5/12 mx-auto bg-secondary-color text-white text-lg rounded-xl border-2">
             <FontAwesomeIcon icon={faMagnifyingGlass} fontSize="20" className='pl-5'/>  
             <input
               type="text" 
