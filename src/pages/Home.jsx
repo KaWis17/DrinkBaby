@@ -3,7 +3,7 @@ import { TextWithTitle } from "../components/TextWithTitle"
 export function Home() {
   return(
     <>
-        <section className="container mx-auto relative">
+        <section className="container mx-auto">
 
           <div className="flex flex-row items-center gap-12 my-28">
             <div className="flex flex-1 flex-col items-start px-3 md:px-0 ">
@@ -12,7 +12,7 @@ export function Home() {
             </div>
             <div className="hidden md:flex justify-center flex-1">
               <img src="https://cdn.pixabay.com/photo/2014/06/26/16/33/cocktail-377960_1280.png"
-                  className="animate-pulse object-contain h-96"
+                  className="object-contain h-96"
               />
             </div>
           </div>
@@ -20,7 +20,7 @@ export function Home() {
         </section>
 
 
-        <section className="container mx-auto relative">
+        <section className="container mx-auto">
 
           <div className="flex flex-col md:flex-row items-center gap-12 my-28 px-3 md:px-0 ">
 

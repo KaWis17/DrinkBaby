@@ -8,7 +8,7 @@ export function DrinkCard(props) {
 
                 <motion.div className="basis-3/4">
                 </motion.div>
-                <motion.div className="basis-1/4 backdrop-blur-lg bg-white/70 p-2 w-full text-xl text-center">
+                <motion.div className="basis-1/4 bg-white/70 p-2 w-full text-xl text-center">
 
                     <motion.p className="text-3xl mt-2">{props.name}</motion.p>
 
